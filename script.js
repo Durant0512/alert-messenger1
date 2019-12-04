@@ -8,34 +8,31 @@ function list(ar, container_id){
     }
     var con = document.querySelector(container_id);
     con.innerHTML = result;
-    con.onclick = function(){
-        for(var item of ar){
-        alert('Вы нажали на имя' + item)
     }
-    };
-}
 
 list(names, '#list');
 
-/*names = document.querySelector('#list');
+var list = document.querySelectorAll('li');
 
-names.onclick = function(){
-    alert('Вы нажали на имя' + names)
-};*/
-
-
-
-
-
-/*var html = [];
-for(var name of names){
-    html += '<li>' + name + '</li>';
+var onCl = function() {
+    alert(this.innerHTML)
 }
 
-console.log(html);
+list.forEach (function(li){
+    li.onclick =onCl;
+});
+console.log(names)
 
 
-var container = document.querySelector('#list');
-container.innerHTML = html;*/
 
 
+
+/*var list = document.querySelectorAll('li');
+
+var oncl = function(){
+    alert(this.innerHTML)
+}
+
+list.forEach = (function(li){
+    li.onclick = oncl;
+});*/
